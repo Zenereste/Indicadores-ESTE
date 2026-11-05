@@ -6,7 +6,7 @@
 <meta name="robots" content="noindex, nofollow">
 <title>Cuadros de mando · Zener</title>
 <style>
-  :root { --fg: #1d1d1b; --mu: #6b6a66; --bg: #f5f4f0; --panel: #ffffff; --line: #e3e1dc; --navy: #24264f; --bad: #c0392b; }
+  :root { --fg: #1d1d1b; --mu: #6b6a66; --bg: #f5f4f0; --panel: #ffffff; --line: #e3e1dc; --navy: #24264f; --bad: #c0392b; --ok: #2e7d32; --warn: #b26a00; }
   * { box-sizing: border-box; }
   html, body { margin: 0; height: 100%; background: var(--bg); color: var(--fg); font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif; }
   .barra { display: flex; align-items: center; gap: 12px; padding: 10px 18px; background: var(--navy); color: #fff; min-height: 56px; }
@@ -23,15 +23,26 @@
   .login button { width: 100%; font: inherit; font-size: 16px; font-weight: 600; color: #fff; background: var(--navy); border: 0; border-radius: 8px; padding: 11px; cursor: pointer; }
   .login button:disabled { opacity: .6; }
   .error { color: var(--bad); font-size: 14px; margin-top: 12px; text-align: center; min-height: 1.2em; }
-  .menu { max-width: 1100px; margin: 0 auto; padding: 28px 18px; }
-  .menu h2 { margin: 0 0 4px; font-size: 22px; }
-  .menu > p { margin: 0 0 20px; color: var(--mu); font-size: 14px; }
-  .tarjetas { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr)); gap: 16px; }
-  .tarjeta { text-align: left; font: inherit; color: inherit; background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 20px; cursor: pointer; display: flex; flex-direction: column; gap: 8px; border-top: 5px solid var(--navy); transition: transform .12s, box-shadow .12s; }
-  .tarjeta:hover { transform: translateY(-2px); box-shadow: 0 8px 22px rgba(0,0,0,.08); }
-  .tarjeta b { font-size: 17px; }
-  .tarjeta span { color: var(--mu); font-size: 14px; line-height: 1.4; }
-  .tarjeta small { color: var(--mu); font-size: 12.5px; margin-top: auto; padding-top: 6px; }
+  .menu { max-width: 1100px; margin: 0 auto; padding: 28px 18px 40px; }
+  .cabecera { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 6px 16px; margin-bottom: 20px; }
+  .cabecera h2 { margin: 0; font-size: 24px; }
+  .cabecera .saludo { margin: 0 0 2px; color: var(--mu); font-size: 14px; }
+  .actualizado { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; color: var(--mu); background: var(--panel); border: 1px solid var(--line); border-radius: 999px; padding: 5px 12px; }
+  .tarjetas { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr)); gap: 18px; }
+  .tarjeta { --c: var(--navy); position: relative; text-align: left; font: inherit; color: inherit; background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 18px 20px 16px; cursor: pointer; display: flex; flex-direction: column; gap: 12px; overflow: hidden; transition: transform .12s, box-shadow .12s, border-color .12s; }
+  .tarjeta::before { content: ""; position: absolute; inset: 0 0 auto 0; height: 5px; background: var(--c); }
+  .tarjeta:hover, .tarjeta:focus-visible { transform: translateY(-2px); box-shadow: 0 10px 26px rgba(0,0,0,.09); border-color: color-mix(in srgb, var(--c) 45%, var(--line)); outline: none; }
+  .t-cab { display: flex; align-items: center; gap: 12px; }
+  .icono { flex: none; width: 42px; height: 42px; border-radius: 11px; display: grid; place-items: center; font-size: 21px; background: color-mix(in srgb, var(--c) 13%, #fff); }
+  .t-cab b { font-size: 16.5px; line-height: 1.25; }
+  .t-desc { color: var(--mu); font-size: 13.5px; line-height: 1.4; }
+  .t-pie { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-top: auto; padding-top: 10px; border-top: 1px solid var(--line); font-size: 12.5px; color: var(--mu); }
+  .estado { display: inline-flex; align-items: center; gap: 6px; font-weight: 600; }
+  .estado::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--mu); }
+  .estado.ok { color: var(--ok); } .estado.ok::before { background: var(--ok); }
+  .estado.aviso { color: var(--warn); } .estado.aviso::before { background: var(--warn); }
+  .abrir { color: var(--c); font-weight: 600; white-space: nowrap; }
+  @media (max-width: 520px) { .cabecera h2 { font-size: 21px; } }
   .visor { position: fixed; inset: 56px 0 0 0; }
   .visor iframe { width: 100%; height: 100%; border: 0; background: #fff; }
   .cargando { padding: 40px; text-align: center; color: var(--mu); }
@@ -58,8 +69,10 @@
 </form>
 
 <div class="menu" id="menu" hidden>
-  <h2>Elige un cuadro</h2>
-  <p id="generado"></p>
+  <div class="cabecera">
+    <div><p class="saludo" id="saludo"></p><h2>Elige un cuadro</h2></div>
+    <span class="actualizado" id="generado"></span>
+  </div>
   <div class="tarjetas" id="tarjetas"></div>
 </div>
 
@@ -112,15 +125,24 @@
     $('login').hidden = true; $('menu').hidden = false; $('visor').hidden = true;
     $('volver').hidden = true; $('salir').hidden = false; $('titulo').textContent = 'Cuadros de mando';
     $('marco').srcdoc = ''; $('marco').hidden = true;
-    $('generado').textContent = 'Datos actualizados el ' + manifiesto.generado + '.';
-    const t = $('tarjetas');
-    t.replaceChildren(...manifiesto.cuadros.map((c) => {
-      const b = document.createElement('button');
-      b.type = 'button'; b.className = 'tarjeta';
-      const h = document.createElement('b'); h.textContent = c.titulo;
-      const d = document.createElement('span'); d.textContent = c.descripcion;
-      const s = document.createElement('small'); s.textContent = 'Datos hasta: ' + (c.datos_hasta || '—');
-      b.append(h, d, s);
+    const h0 = new Date().getHours();
+    const fecha = new Date().toLocaleDateString('es-ES', { weekday: 'long', day: 'numeric', month: 'long' });
+    $('saludo').textContent = (h0 < 14 ? 'Buenos días' : h0 < 21 ? 'Buenas tardes' : 'Buenas noches') + ' · ' + fecha;
+    $('generado').textContent = '🔄 Actualizado el ' + manifiesto.generado;
+    const el = (tag, cls, txt) => { const e = document.createElement(tag); if (cls) e.className = cls; if (txt != null) e.textContent = txt; return e; };
+    $('tarjetas').replaceChildren(...manifiesto.cuadros.map((c) => {
+      const b = el('button', 'tarjeta');
+      b.type = 'button';
+      if (c.color) b.style.setProperty('--c', c.color);
+      const cab = el('div', 't-cab');
+      cab.append(el('span', 'icono', c.icono || '📈'), el('b', null, c.titulo));
+      b.append(cab, el('span', 't-desc', c.descripcion));
+      const pie = el('div', 't-pie');
+      const est = el('span', null);
+      if (c.estado && c.estado.texto) { est.append(el('span', 'estado ' + c.estado.tipo, c.estado.texto)); }
+      est.append(document.createTextNode((c.estado && c.estado.texto ? ' · ' : '') + 'Datos hasta ' + (c.datos_hasta || '—')));
+      pie.append(est, el('span', 'abrir', 'Abrir →'));
+      b.append(pie);
       b.addEventListener('click', () => { location.hash = c.id; });
       return b;
     }));
