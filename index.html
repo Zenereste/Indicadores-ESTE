@@ -101,7 +101,8 @@
   const ITER = 310000;
   const LOGIN = 'https://script.google.com/macros/s/AKfycbxrPel8bZpSaoDmYW0naaiJkEk5cgjdWucyUCFwpzvaeWZig66lUSTfltaxTj5n8nleQA/exec';                  // vacío: contraseña común (como antes); si no, usuario por persona
   const GUARDADA = 'zener-cuadros-clave';           // modo contraseña común: la llave
-  const SESION = 'zener-cuadros-sesion';            // modo usuario: la sesión (no la llave)
+  const SESION = 'zener-cuadros-sesion';            // modo usuario: la sesión
+  const LLAVES = 'zener-cuadros-llaves';            // modo usuario: las llaves del mes, para abrir al momento (se comprueba por detrás)
   const $ = (id) => document.getElementById(id);
   let llaves = [], manifiesto = null, yo = null;
 
@@ -127,6 +128,8 @@
 
   // ---------- modo usuario por persona: se pregunta al script de Google en cada visita
   const sesion = () => localStorage.getItem(SESION) || sessionStorage.getItem(SESION) || '';
+  const almacen = () => (localStorage.getItem(SESION) ? localStorage : sessionStorage);
+  const olvidar = () => { [localStorage, sessionStorage].forEach((s) => { s.removeItem(SESION); s.removeItem(LLAVES); }); };
   async function api(cuerpo) {
     let r;
     try { r = await fetch(LOGIN, { method: 'POST', body: JSON.stringify(cuerpo) }); } catch (e) { throw new Error('conexion'); }
@@ -137,14 +140,32 @@
     yo = { usuario: res.usuario, nombre: res.nombre, admin: !!res.admin };
     llaves = await Promise.all(res.llaves.map((k) => importar(deB64(k))));
     manifiesto = await abrir('manifiesto.bin');
+    try { almacen().setItem(LLAVES, JSON.stringify({ usuario: res.usuario, nombre: res.nombre, admin: !!res.admin, llaves: res.llaves })); } catch (e) { /* sin almacenamiento */ }
+  }
+  // Comprobación por detrás: si te han quitado el acceso (o la sesión ha caducado), fuera.
+  function comprobar(t) {
+    api({ web: 'sesion', token: t }).then((res) => {
+      if (res.ok) { aceptar(res).catch(() => {}); return; }
+      if (res.salir) { olvidar(); llaves = []; manifiesto = null; yo = null; location.hash = ''; verLogin(); $('error').textContent = res.error || ''; }
+    }).catch(() => { /* sin conexión: se sigue con lo que hay */ });
   }
   async function recuperarUsuario() {
     const t = sesion();
     if (!t) return false;
+    try {                                            // al momento, con las llaves de la última visita
+      const g = JSON.parse(almacen().getItem(LLAVES) || 'null');
+      if (g && g.llaves) {
+        yo = { usuario: g.usuario, nombre: g.nombre, admin: !!g.admin };
+        llaves = await Promise.all(g.llaves.map((k) => importar(deB64(k))));
+        manifiesto = await abrir('manifiesto.bin');
+        comprobar(t);
+        return true;
+      }
+    } catch (e) { llaves = []; manifiesto = null; }   // llaves de otro mes: se piden y se espera
     try {
       const res = await api({ web: 'sesion', token: t });
       if (!res.ok) {
-        if (res.salir) { localStorage.removeItem(SESION); sessionStorage.removeItem(SESION); }
+        if (res.salir) olvidar();
         $('error').textContent = res.error || '';
         return false;
       }
@@ -235,8 +256,8 @@
         const recordar = $('recordar').checked;
         const res = await api({ web: 'login', usuario: $('usuario').value.trim(), clave: $('clave').value, recordar });
         if (!res.ok) throw new Error('mensaje:' + (res.error || 'No se ha podido entrar.'));
+        olvidar();
         (recordar ? localStorage : sessionStorage).setItem(SESION, res.token);
-        (recordar ? sessionStorage : localStorage).removeItem(SESION);
         await aceptar(res);
       } else {
         const llave = await derivar($('clave').value);
@@ -258,7 +279,7 @@
   $('salir').addEventListener('click', () => {
     if (LOGIN && sesion()) api({ web: 'salir', token: sesion() }).catch(() => {});
     localStorage.removeItem(GUARDADA); sessionStorage.removeItem(GUARDADA);
-    localStorage.removeItem(SESION); sessionStorage.removeItem(SESION);
+    olvidar();
     llaves = []; manifiesto = null; yo = null; location.hash = ''; verLogin();
   });
   window.addEventListener('hashchange', ruta);
