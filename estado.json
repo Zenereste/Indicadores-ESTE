@@ -1,0 +1,92 @@
+{
+ "dia": "2026-11-18",
+ "generado": "2026-11-18T18:37+01:00",
+ "cuadros": [
+  {
+   "id": "cierre",
+   "titulo": "Cierre diario",
+   "datos_hasta": "18/11/2026 18:32",
+   "estado": {
+    "tipo": "ok",
+    "texto": "Al día"
+   }
+  },
+  {
+   "id": "cierre-acumulado",
+   "titulo": "Cierre acumulado",
+   "datos_hasta": "17/11/2026",
+   "estado": {
+    "tipo": "ok",
+    "texto": "Al día"
+   }
+  },
+  {
+   "id": "deepomatic",
+   "titulo": "Deepomatic",
+   "datos_hasta": "17/11/2026",
+   "estado": {
+    "tipo": "ok",
+    "texto": "Al día"
+   }
+  },
+  {
+   "id": "sin-quitar",
+   "titulo": "Acometidas y equipos sin quitar en ZIM",
+   "datos_hasta": "17/11/2026",
+   "estado": {
+    "tipo": "ok",
+    "texto": "Al día"
+   }
+  },
+  {
+   "id": "puntos",
+   "titulo": "Puntos y desplazamientos por técnico",
+   "datos_hasta": "17/11/2026",
+   "estado": {
+    "tipo": "ok",
+    "texto": "Al día"
+   }
+  },
+  {
+   "id": "indicadores",
+   "titulo": "Indicadores Técnicos",
+   "datos_hasta": "17/11/2026",
+   "estado": {
+    "tipo": "ok",
+    "texto": "Al día"
+   }
+  },
+  {
+   "id": "cuestionarios",
+   "titulo": "Cuestionarios",
+   "datos_hasta": "último envío 17/11/2026",
+   "estado": {
+    "tipo": "ok",
+    "texto": "Al día"
+   }
+  },
+  {
+   "id": "confirmacion",
+   "titulo": "Confirmación de órdenes",
+   "datos_hasta": "órdenes del 19/11/2026 · envío 16:13",
+   "estado": {
+    "tipo": "ok",
+    "texto": "Al día"
+   }
+  },
+  {
+   "id": "accesos",
+   "titulo": "Accesos a la web",
+   "datos_hasta": "18/11/2026",
+   "estado": {
+    "tipo": "ok",
+    "texto": "Solo lo ves tú"
+   }
+  }
+ ],
+ "bot": {
+  "tipo": "aviso",
+  "texto": "Lo atiende Google (funciona con el Mac apagado); último error 18/11 10:52: Read timeout expired",
+  "desde": "2026-11-18T10:53+01:00"
+ }
+}
