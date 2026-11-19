@@ -1,6 +1,6 @@
 {
  "dia": "2026-11-19",
- "generado": "2026-11-19T16:36+01:00",
+ "generado": "2026-11-19T16:58+01:00",
  "cuadros": [
   {
    "id": "cierre",
@@ -50,7 +50,7 @@
   {
    "id": "indicadores",
    "titulo": "Indicadores Técnicos",
-   "datos_hasta": "17/11/2026",
+   "datos_hasta": "18/11/2026",
    "estado": {
     "tipo": "ok",
     "texto": "Al día"
