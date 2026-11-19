@@ -1,6 +1,6 @@
 {
  "dia": "2026-11-19",
- "generado": "2026-11-19T13:35+01:00",
+ "generado": "2026-11-19T13:55+01:00",
  "cuadros": [
   {
    "id": "cierre",
@@ -59,7 +59,7 @@
   {
    "id": "cuestionarios",
    "titulo": "Cuestionarios",
-   "datos_hasta": "último envío 17/11/2026",
+   "datos_hasta": "último envío 19/11/2026",
    "estado": {
     "tipo": "ok",
     "texto": "Al día"
