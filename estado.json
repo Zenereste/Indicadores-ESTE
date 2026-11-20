@@ -1,6 +1,6 @@
 {
  "dia": "2026-11-20",
- "generado": "2026-11-20T20:42+01:00",
+ "generado": "2026-11-20T21:49+01:00",
  "cuadros": [
   {
    "id": "cierre",
@@ -85,8 +85,8 @@
   }
  ],
  "bot": {
-  "tipo": "aviso",
-  "texto": "No se pudo consultar a Telegram: Bad Gateway",
-  "desde": "2026-11-20T20:42+01:00"
+  "tipo": "ok",
+  "texto": "Lo atiende Google (funciona con el Mac apagado)",
+  "desde": "2026-11-20T21:49+01:00"
  }
 }
