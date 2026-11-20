@@ -1,6 +1,6 @@
 {
  "dia": "2026-11-20",
- "generado": "2026-11-20T09:06+01:00",
+ "generado": "2026-11-20T09:47+01:00",
  "cuadros": [
   {
    "id": "cierre",
@@ -68,7 +68,7 @@
   {
    "id": "confirmacion",
    "titulo": "Confirmación de órdenes",
-   "datos_hasta": "órdenes del 20/11/2026 · envío 20:33",
+   "datos_hasta": "órdenes del 23/11/2026 · envío 09:46",
    "estado": {
     "tipo": "ok",
     "texto": "Al día"
