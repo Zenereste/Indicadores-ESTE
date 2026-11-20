@@ -1,6 +1,6 @@
 {
  "dia": "2026-11-20",
- "generado": "2026-11-20T09:52+01:00",
+ "generado": "2026-11-20T13:10+01:00",
  "cuadros": [
   {
    "id": "cierre",
@@ -41,10 +41,10 @@
   {
    "id": "puntos",
    "titulo": "Puntos y desplazamientos por técnico",
-   "datos_hasta": "18/11/2026",
+   "datos_hasta": "19/11/2026",
    "estado": {
-    "tipo": "aviso",
-    "texto": "Sin datos nuevos desde hace 2 días"
+    "tipo": "ok",
+    "texto": "Al día"
    }
   },
   {
@@ -68,7 +68,7 @@
   {
    "id": "confirmacion",
    "titulo": "Confirmación de órdenes",
-   "datos_hasta": "órdenes del 21/11/2026 · envío 09:47",
+   "datos_hasta": "órdenes del 23/11/2026 · envío 13:01",
    "estado": {
     "tipo": "ok",
     "texto": "Al día"
