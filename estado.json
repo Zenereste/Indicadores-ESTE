@@ -1,14 +1,14 @@
 {
  "dia": "2026-11-23",
- "generado": "2026-11-23T08:52+01:00",
+ "generado": "2026-11-23T09:20+01:00",
  "cuadros": [
   {
    "id": "cierre",
    "titulo": "Cierre diario",
-   "datos_hasta": "hoy aún sin descarga de ZIM",
+   "datos_hasta": "23/11/2026 09:11",
    "estado": {
-    "tipo": "sin",
-    "texto": "Sin datos"
+    "tipo": "ok",
+    "texto": "Al día"
    }
   },
   {
@@ -23,10 +23,10 @@
   {
    "id": "deepomatic",
    "titulo": "Deepomatic",
-   "datos_hasta": "19/11/2026",
+   "datos_hasta": "21/11/2026",
    "estado": {
-    "tipo": "aviso",
-    "texto": "Sin datos nuevos desde hace 4 días"
+    "tipo": "ok",
+    "texto": "Al día"
    }
   },
   {
