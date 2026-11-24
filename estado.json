@@ -1,6 +1,6 @@
 {
  "dia": "2026-11-24",
- "generado": "2026-11-24T07:55+01:00",
+ "generado": "2026-11-24T08:37+01:00",
  "cuadros": [
   {
    "id": "cierre",
@@ -14,10 +14,10 @@
   {
    "id": "cierre-acumulado",
    "titulo": "Cierre acumulado",
-   "datos_hasta": "20/11/2026",
+   "datos_hasta": "23/11/2026",
    "estado": {
-    "tipo": "aviso",
-    "texto": "Sin datos nuevos desde hace 4 días"
+    "tipo": "ok",
+    "texto": "Al día"
    }
   },
   {
@@ -77,7 +77,7 @@
   {
    "id": "accesos",
    "titulo": "Accesos a la web",
-   "datos_hasta": "23/11/2026",
+   "datos_hasta": "24/11/2026",
    "estado": {
     "tipo": "ok",
     "texto": "Solo lo ves tú"
