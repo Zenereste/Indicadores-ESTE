@@ -1,14 +1,14 @@
 {
  "dia": "2026-11-24",
- "generado": "2026-11-24T09:29+01:00",
+ "generado": "2026-11-24T09:36+01:00",
  "cuadros": [
   {
    "id": "cierre",
    "titulo": "Cierre diario",
-   "datos_hasta": "hoy aún sin descarga de ZIM",
+   "datos_hasta": "24/11/2026 09:32",
    "estado": {
-    "tipo": "sin",
-    "texto": "Sin datos"
+    "tipo": "ok",
+    "texto": "Al día"
    }
   },
   {
