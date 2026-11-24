@@ -1,11 +1,11 @@
 {
  "dia": "2026-11-24",
- "generado": "2026-11-24T15:02+01:00",
+ "generado": "2026-11-24T15:42+01:00",
  "cuadros": [
   {
    "id": "cierre",
    "titulo": "Cierre diario",
-   "datos_hasta": "24/11/2026 14:59",
+   "datos_hasta": "24/11/2026 15:32",
    "estado": {
     "tipo": "ok",
     "texto": "Al día"
