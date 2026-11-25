@@ -1,6 +1,6 @@
 {
  "dia": "2026-11-25",
- "generado": "2026-11-25T08:02+01:00",
+ "generado": "2026-11-25T08:39+01:00",
  "cuadros": [
   {
    "id": "cierre",
@@ -14,10 +14,10 @@
   {
    "id": "cierre-acumulado",
    "titulo": "Cierre acumulado",
-   "datos_hasta": "23/11/2026",
+   "datos_hasta": "24/11/2026",
    "estado": {
-    "tipo": "aviso",
-    "texto": "Sin datos nuevos desde hace 2 días"
+    "tipo": "ok",
+    "texto": "Al día"
    }
   },
   {
