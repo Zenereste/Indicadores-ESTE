@@ -1,6 +1,6 @@
 {
  "dia": "2026-11-25",
- "generado": "2026-11-25T08:39+01:00",
+ "generado": "2026-11-25T09:12+01:00",
  "cuadros": [
   {
    "id": "cierre",
@@ -32,10 +32,10 @@
   {
    "id": "sin-quitar",
    "titulo": "Acometidas y equipos sin quitar en ZIM",
-   "datos_hasta": "23/11/2026",
+   "datos_hasta": "24/11/2026",
    "estado": {
-    "tipo": "aviso",
-    "texto": "Sin datos nuevos desde hace 2 días"
+    "tipo": "ok",
+    "texto": "Al día"
    }
   },
   {
