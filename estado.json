@@ -1,6 +1,6 @@
 {
  "dia": "2026-11-26",
- "generado": "2026-11-26T08:54+01:00",
+ "generado": "2026-11-26T09:26+01:00",
  "cuadros": [
   {
    "id": "cierre",
@@ -23,10 +23,10 @@
   {
    "id": "deepomatic",
    "titulo": "Deepomatic",
-   "datos_hasta": "24/11/2026",
+   "datos_hasta": "25/11/2026",
    "estado": {
-    "tipo": "aviso",
-    "texto": "Sin datos nuevos desde hace 2 días"
+    "tipo": "ok",
+    "texto": "Al día"
    }
   },
   {
