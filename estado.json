@@ -1,6 +1,6 @@
 {
  "dia": "2026-11-26",
- "generado": "2026-11-26T15:01+01:00",
+ "generado": "2026-11-26T15:34+01:00",
  "cuadros": [
   {
    "id": "cierre",
@@ -41,10 +41,10 @@
   {
    "id": "puntos",
    "titulo": "Puntos y desplazamientos por técnico",
-   "datos_hasta": "23/11/2026",
+   "datos_hasta": "25/11/2026",
    "estado": {
-    "tipo": "aviso",
-    "texto": "Sin datos nuevos desde hace 3 días"
+    "tipo": "ok",
+    "texto": "Al día"
    }
   },
   {
