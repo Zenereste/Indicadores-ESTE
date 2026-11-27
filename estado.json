@@ -1,20 +1,20 @@
 {
- "dia": "2026-11-26",
- "generado": "2026-11-26T20:52+01:00",
+ "dia": "2026-11-27",
+ "generado": "2026-11-27T08:37+01:00",
  "cuadros": [
   {
    "id": "cierre",
    "titulo": "Cierre diario",
-   "datos_hasta": "26/11/2026 19:16",
+   "datos_hasta": "hoy aún sin descarga de ZIM",
    "estado": {
-    "tipo": "ok",
-    "texto": "Al día"
+    "tipo": "sin",
+    "texto": "Sin datos"
    }
   },
   {
    "id": "cierre-acumulado",
    "titulo": "Cierre acumulado",
-   "datos_hasta": "25/11/2026",
+   "datos_hasta": "26/11/2026",
    "estado": {
     "tipo": "ok",
     "texto": "Al día"
@@ -25,8 +25,8 @@
    "titulo": "Deepomatic",
    "datos_hasta": "25/11/2026",
    "estado": {
-    "tipo": "ok",
-    "texto": "Al día"
+    "tipo": "aviso",
+    "texto": "Sin datos nuevos desde hace 2 días"
    }
   },
   {
@@ -34,8 +34,8 @@
    "titulo": "Acometidas y equipos sin quitar en ZIM",
    "datos_hasta": "25/11/2026",
    "estado": {
-    "tipo": "ok",
-    "texto": "Al día"
+    "tipo": "aviso",
+    "texto": "Sin datos nuevos desde hace 2 días"
    }
   },
   {
@@ -43,8 +43,8 @@
    "titulo": "Puntos y desplazamientos por técnico",
    "datos_hasta": "25/11/2026",
    "estado": {
-    "tipo": "ok",
-    "texto": "Al día"
+    "tipo": "aviso",
+    "texto": "Sin datos nuevos desde hace 2 días"
    }
   },
   {
@@ -77,7 +77,7 @@
   {
    "id": "accesos",
    "titulo": "Accesos a la web",
-   "datos_hasta": "26/11/2026",
+   "datos_hasta": "27/11/2026",
    "estado": {
     "tipo": "ok",
     "texto": "Solo lo ves tú"
