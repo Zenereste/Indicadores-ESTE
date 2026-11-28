@@ -1,6 +1,6 @@
 {
- "dia": "2026-11-27",
- "generado": "2026-11-27T19:37+01:00",
+ "dia": "2026-11-28",
+ "generado": "2026-11-28T10:24+01:00",
  "cuadros": [
   {
    "id": "cierre",
@@ -16,8 +16,8 @@
    "titulo": "Cierre acumulado",
    "datos_hasta": "26/11/2026",
    "estado": {
-    "tipo": "ok",
-    "texto": "Al día"
+    "tipo": "aviso",
+    "texto": "Sin datos nuevos desde hace 2 días"
    }
   },
   {
@@ -25,8 +25,8 @@
    "titulo": "Deepomatic",
    "datos_hasta": "26/11/2026",
    "estado": {
-    "tipo": "ok",
-    "texto": "Al día"
+    "tipo": "aviso",
+    "texto": "Sin datos nuevos desde hace 2 días"
    }
   },
   {
@@ -34,8 +34,8 @@
    "titulo": "Acometidas y equipos sin quitar en ZIM",
    "datos_hasta": "26/11/2026",
    "estado": {
-    "tipo": "ok",
-    "texto": "Al día"
+    "tipo": "aviso",
+    "texto": "Sin datos nuevos desde hace 2 días"
    }
   },
   {
@@ -44,7 +44,7 @@
    "datos_hasta": "25/11/2026",
    "estado": {
     "tipo": "aviso",
-    "texto": "Sin datos nuevos desde hace 2 días"
+    "texto": "Sin datos nuevos desde hace 3 días"
    }
   },
   {
